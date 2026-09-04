@@ -8,7 +8,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
-  // base: "/web-project/",
+  base: "/iVision_WebProject/",
   server: {
     port: 3000,
     proxy: {
