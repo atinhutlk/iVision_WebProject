@@ -18,13 +18,10 @@ import ChatAiWidget from './components/ChatAiWidget';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/iVision_WebProject">
       <Routes>
-        {/* Define the Layout Route */}
         <Route path="/" element={<Layout />}>
-          {/* Nested Routes within the Layout */}
-          <Route index element={<Home />} /> {/* Default Route */}
-          <Route path="web-project/" element={<Home />} /> {/* Route For Deployment */}
+          <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="services" element={<Services />} />
           <Route path="services/:id" element={<ServiceDetail />} />
@@ -33,15 +30,14 @@ function App() {
           <Route path="contact" element={<Contact />} />
           <Route path="bookApp" element={<BookApp />} />
           <Route path="login" element={<Login />} />
-          <Route path="*" element={<NotFound />} /> {/* Catch-all for undefined routes */}
+          <Route path="*" element={<NotFound />} />
         </Route>
-        {/* User Dashboard */}
+
         <Route path="/profile" element={<UserDashboard />} />
-        {/* Doctor Dashboard */}
         <Route path="/doctor" element={<DoctorDashboard />} />
-        {/* Admin Dashboard */}
         <Route path="/admin" element={<AdminDashboard />} />
       </Routes>
+
       <ChatAiWidget />
     </BrowserRouter>
   );
